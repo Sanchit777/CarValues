@@ -1814,7 +1814,7 @@ ol {
 
 .testimonial__slider.owl-carousel .owl-nav button.owl-next {
 	left: auto;
-	/* right: -85px; */
+	right: -85px;
 }
 
 .testimonial__slider.owl-carousel .owl-dots {

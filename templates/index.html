@@ -56,6 +56,14 @@
     margin-left: 28%;
     
 }
+@media (max-width: 767px) {
+  .header-area .main-nav .nav li:last-child {
+      width: 100%;
+      color: #fff;
+      background: transparent;
+      box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75);
+  }
+}
 
  </style>
                      </head>
@@ -120,7 +128,7 @@
                                                         <li><a href="#" onclick="redirectToLogin()">Log In</a></li>
                                                     {% endif %}
                                                 </ul>        
-                                                <a class='menu-trigger' style="background: black;">
+                                                <a class='menu-trigger' style="background: black; border-radius: 10px;">
                                                     <span>Menu</span>
                                                 </a>
                                                 <!-- ***** Menu End ***** -->

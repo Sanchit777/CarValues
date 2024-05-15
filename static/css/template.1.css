@@ -301,13 +301,7 @@ header
     /* .header-area.header-sticky .nav {
       margin-top: 80px !important;
     } */
-    .header-area .main-nav .nav li {
-      /* width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      padding-left: 0px !important;
-      padding-right: 0px !important; */
-    }
+   
     .header-area .main-nav .nav li a {
       height: 50px !important;
       line-height: 50px !important;
@@ -366,14 +360,7 @@ header
     }
 }
 
-/* @media (max-width: 767px) {
-  .header-area .main-nav .nav li:last-child {
-      width: 100%;
-      background: transparent;
-      color: #fff;
-      box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 25);
-  }
-} */
+
 
   /* 
 ---------------------------------------------
@@ -412,7 +399,7 @@ banner
     position: absolute;
     width: 80%;
     left: 50%;
-    top: 50%;
+    top: 54%;
     transform: translate(-50%,-50%);
   }
   
