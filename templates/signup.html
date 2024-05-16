@@ -52,7 +52,7 @@
 
 </body>
 </html> -->
-
+<!-- checking -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,6 +93,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background: transparent;
+            width: 94%;
         }
         input::placeholder {
             color: white;
@@ -119,6 +120,11 @@
         input {
           color: white;
         }
+        button{
+          border-radius: 10px;
+    background: transparent;
+    color: white;
+        }
         
         
             </style>
@@ -127,76 +133,103 @@
   <body style="background: url(../static/img/car.jpg);">
    
 
-    <div class="container" style="  max-width: 400px;
+    <div class="container" style="max-width: 400px;
     margin: 50px auto;
     padding: 20px;
     border-radius: 5px;
     background: transparent;
-    box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75)";>
-     <h3>SIGNUP PAGE</h3>
-      <form id="signupForm" method="post">
+    box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75)">
+    <h3>SIGNUP PAGE</h3>
+    <form id="signupForm" method="post">
         {% csrf_token %}
         <label for="username">Username</label>
         <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Create a username (Only letters and numbers)"
-          required
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Create a username (Only letters and numbers)"
+            required
         /><br />
 
         <label for="fname">FirstName</label>
         <input
-          type="text"
-          id="fname"
-          name="fname"
-          placeholder="Enter Your First Name here.."
-          required
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter Your First Name here.."
+            required
         /><br />
 
         <label for="lname">LastName</label>
         <input
-          type="text"
-          id="lname"
-          name="lname"
-          placeholder="Enter Your Last Name..."
-          required
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Enter Your Last Name..."
+            required
         /><br />
 
         <label for="email">Email</label>
         <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter Your Email here ..."
-          required
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Your Email here ..."
+            required
         /><br />
 
         <label for="pass1">Password</label>
-        <input
-          type="password"
-          id="pass1"
-          name="pass1"
-          placeholder="Enter Your Password here..."
-          required
-        /><br />
+        <div style="position: relative;">
+            <input
+                type="password"
+                id="pass1"
+                name="pass1"
+                placeholder="Enter Your Password here..."
+                required
+            />
+            <button type="button" class="toggle-password" data-target="pass1">Show</button>
+        </div><br />
 
         <label for="pass2">Confirm Password</label>
-        <input
-          type="password"
-          id="pass2"
-          name="pass2"
-          placeholder="Enter Your Confirm Password here..."
-          required
-        /><br />
+        <div style="position: relative;">
+            <input
+                type="password"
+                id="pass2"
+                name="pass2"
+                placeholder="Enter Your Confirm Password here..."
+                required
+            />
+            <button type="button" class="toggle-password" data-target="pass2">Show</button>
+        </div><br />
 
         <button type="submit">Sign up</button>
         <span><a href="{% url 'signin' %}">Already have an account? Login</a></span>
-      </form>
-    </div>
+    </form>
+</div>
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const togglePasswordButtons = document.querySelectorAll(".toggle-password");
+
+    togglePasswordButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const targetId = this.getAttribute("data-target");
+            const targetInput = document.getElementById(targetId);
+            
+            if (targetInput.type === "password") {
+                targetInput.type = "text";
+                this.textContent = "Hide";
+            } else {
+                targetInput.type = "password";
+                this.textContent = "Show";
+            }
+        });
+    });
+});
+
+    </script>
   </body>
 </html>
-
-
-
-
