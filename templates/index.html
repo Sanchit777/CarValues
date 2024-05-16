@@ -159,34 +159,19 @@
                 <h6>Best car dealership</h6>
                 <h2>Best <em>car dealer</em> in Indore!</h2>
                 <div class="row">
-                    {% if user.is_authenticated %}
-                        <div class="main-button col-md-3">
-                            <a href="https://sanchit123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</a>
-                        </div>
-                        <div class="main-button col-md-3">
-                            <a href="https://shivamtiwari.streamlit.app/" style="color: white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</a>
-                        </div>
-                        <div class="main-button col-md-3">
-                            <a href="https://loan-2.onrender.com" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</a>
-                        </div>
-                        <div class="main-button col-md-3">
-                            <a href="https://himanshu123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</a>
-                        </div>
-                    {% else %}
-                        <div class="col-md-3">
-                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</button>
-                        </div>
-                    {% endif %}
-                    </div>
+                <div class="main-button col-md-3">
+                    <a href="https://sanchit123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict you Car price</a>
+                </div>
+                <div class="main-button col-md-3">
+                    <a href="https://shivamtiwari.streamlit.app/" style="color: white;font-size: larger;border-radius: 25px;" class="btn btn-success">Resale Price Honda</a>
+                </div>
+                <div class="main-button col-md-3" >
+                    <a href="https://loan-2.onrender.com" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Loan Detail here</a>
+                </div>
+                <div class="main-button col-md-3">
+                    <a href="https://himanshu123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Future Car Prediction</a>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -1525,13 +1510,9 @@
                                     </div>
                                 </div>
                                 <div class="_1GuJT">
-                                    <button id="" data-title="" type="button" class="btn _2iiQB _3qpfi">
-                                        {% if user.is_authenticated %}
-                                            <a href="delhi/" style="color: white;">VIEW all CARS</a>
-                                        {% else %}
-                                            <span onclick="alert('Please login to the website')" style="cursor: pointer; color: white;">VIEW all CARS</span>
-                                        {% endif %}
-                                    </button>
+                                    <button id="" data-title="" type="button" class="btn  _2iiQB _3qpfi "><a href="delhi/">
+                                        VIEW all CARS 
+                                    </a>  </button>
                                 </div>
                             </div>
                         </div>
