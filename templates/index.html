@@ -56,6 +56,23 @@
     margin-left: 28%;
     
 }
+@media (max-width: 767px) {
+  .header-area .main-nav .nav li:last-child {
+      width: 100%;
+      color: #fff;
+      background: transparent;
+      box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75);
+  }
+}
+
+/* CSS for dropdown menu */
+.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .testimonial__slider.owl-carousel .owl-nav button.owl-next {
+	left: auto;
+	right: -85px;
+}
 
  </style>
                      </head>
@@ -120,7 +137,7 @@
                                                         <li><a href="#" onclick="redirectToLogin()">Log In</a></li>
                                                     {% endif %}
                                                 </ul>        
-                                                <a class='menu-trigger' style="background: black;">
+                                                <a class='menu-trigger' style="background: black; border-radius: 10px;">
                                                     <span>Menu</span>
                                                 </a>
                                                 <!-- ***** Menu End ***** -->
@@ -139,20 +156,36 @@
 
         <div class="video-overlay header-text">
             <div class="caption">
-                <h6>Best car deelership</h6>
+                <h6>Best car dealership</h6>
                 <h2>Best <em>car dealer</em> in Indore!</h2>
                 <div class="row">
-                <div class="main-button col-md-3">
-                    <a href="https://sanchit123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict you Car price</a>
-                </div>
-                <div class="main-button col-md-3">
-                    <a href="https://shivamtiwari.streamlit.app/" style="color: white;font-size: larger;border-radius: 25px;" class="btn btn-success">Resale Price Honda</a>
-                </div>
-                <div class="main-button col-md-3" >
-                    <a href="https://loan-2.onrender.com" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Loan Detail here</a>
-                </div>
-                <div class="main-button col-md-3">
-                    <a href="https://himanshu123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Future Car Prediction</a>
+                    {% if user.is_authenticated %}
+                        <div class="main-button col-md-3">
+                            <a href="https://sanchit123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://shivamtiwari.streamlit.app/" style="color: white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://loan-2.onrender.com" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://himanshu123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</a>
+                        </div>
+                    {% else %}
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</button>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
             </div>
@@ -1493,9 +1526,13 @@
                                     </div>
                                 </div>
                                 <div class="_1GuJT">
-                                    <button id="" data-title="" type="button" class="btn  _2iiQB _3qpfi "><a href="delhi/">
-                                        VIEW all CARS 
-                                    </a>  </button>
+                                    <button id="" data-title="" type="button" class="btn _2iiQB _3qpfi">
+                                        {% if user.is_authenticated %}
+                                            <a href="delhi/" style="color: white;">VIEW all CARS</a>
+                                        {% else %}
+                                            <span onclick="alert('Please login to the website')" style="cursor: pointer; color: white;">VIEW all CARS</span>
+                                        {% endif %}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1946,6 +1983,26 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggleLinks = document.querySelectorAll(".dropdown-toggle");
+
+    dropdownToggleLinks.forEach(function(link) {
+        link.addEventListener("mouseover", function() {
+            closeAllDropdowns();
+            this.nextElementSibling.style.display = "block";
+        });
+    });
+
+    function closeAllDropdowns() {
+        const dropdownMenus = document.querySelectorAll(".dropdown-menu");
+        dropdownMenus.forEach(function(menu) {
+            menu.style.display = "none";
+        });
+    }
+});
     </script>
                             
 
