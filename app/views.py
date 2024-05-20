@@ -101,19 +101,16 @@ def signup(request):
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
-        pass1 = request.POST['pass1']
-
-        user = authenticate(username=username, password=pass1)
-
+        password = request.POST['pass1']
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            fname = user.first_name
-            return render(request, 'index.html', {'fname': fname})
+            return redirect('/')  # Redirect to a different page after login
         else:
-            messages.error(request, 'Bad Credentials')
-            return redirect('home')
-
-    return render(request, 'signin.html')
+            # Return an 'invalid login' error message.
+            return render(request, 'signin.html', {'error': 'Invalid username or password'})
+    else:
+        return render(request, 'signin.html')
 
 
 
@@ -163,4 +160,4 @@ def send_test_email(request):
 
 def LogoutPage(request):
    logout(request)
-   return redirect('signin')
+   return redirect('/')
