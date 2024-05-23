@@ -359,9 +359,14 @@ header
         margin-top: 80px;
     }
 }
+.dropdown-menu a:hover {
+  background-color: orange;
+}
 
-
-
+.dropdown-menu a.active {
+  background-color: orange;
+  
+}
   /* 
 ---------------------------------------------
 banner
