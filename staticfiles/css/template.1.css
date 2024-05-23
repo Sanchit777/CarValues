@@ -204,6 +204,14 @@ header
     background-color: transparent;
     width: 100%;
   }
+  .dropdown-menu a:hover {
+    background-color: orange;
+  }
+  
+  .dropdown-menu a.active {
+    background-color: orange;
+    
+  }
   
   .header-area .main-nav .menu-trigger.active span:before {
     -moz-transform: translateY(6px) translateX(1px) rotate(45deg);
